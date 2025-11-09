@@ -1,0 +1,182 @@
+:root {
+    --alive: #9fff31;
+    --dead: #f27373;
+}
+@keyframes FadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+@keyframes FadeOut {
+    from {
+        opacity: 1;
+    }
+    to {
+        opacity: 0;
+    }
+}
+.button[disabled]{
+    opacity: 0.5;
+    cursor: not-allowed !important;
+}
+.button[disabled]:active{
+    background-color: var(--bg-button);
+}
+.pagination {
+    background-color: var(--bg-article);
+    width: 8rem;
+    padding-block: 15px;
+    height: 20px;
+    border-radius: 25px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+}
+.title {
+    font-size: 2.5rem;
+    font-weight: 700;
+    display: flex;
+    flex-direction: column;
+    align-items: center
+}
+.name {
+    text-wrap: balance;
+    font-size: 1.25rem;
+}
+.occupation {
+    display: inline-block;
+    width: 100%;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+.container {
+    display: flex;
+    width: 100%;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+    padding: 2rem;
+}
+.loading {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 15rem;
+    height: 60vh;
+    aspect-ratio: 1 / 1;
+}
+.loadingItem {
+    background-color: var(--bg-article);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 15rem;
+    height: 17rem;
+    aspect-ratio: 1 / 1;
+    border-radius: 1rem;
+    padding: 1rem;
+    text-align: center;
+}
+.card {
+    transition: border 200ms ease-out;
+    background-color: var(--bg-article);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    width: 15rem;
+    height: 20rem;
+    aspect-ratio: 1 / 1;
+    border-radius: 1rem;
+    padding: 1rem;
+    text-align: center;
+    border: #00000000 1px solid;
+    animation: FadeIn 0.5s ease-out;
+}
+.card:hover {
+    border: #00000077 1px solid;
+}
+.cards {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 2rem;
+    width: 100%;
+    padding: 2rem;
+    align-items: center;
+    justify-content: center
+}
+.card img {
+    aspect-ratio: 1 / 1;
+    object-fit: cover;
+    width: 150px;
+}
+.button {
+    background-color: var(--bg-button);
+    color: var(--text-button);
+    padding: .5rem 1rem;
+    border-radius: 1rem;
+    font-size: 1rem;
+    text-decoration: none;
+    font-weight: 700;
+    border: none;
+    cursor: pointer;
+    transition: background 100ms ease-out;
+}
+.button:active {
+    background-color: var(--bg-button-hover);
+}
+.buttons{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+}
+.header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+}
+.alive, .dead {
+    border: 2px solid;
+    width: 100px;
+    height: fit-content;
+    border-radius: 20px;
+    font-weight: 700;
+    font-size: 1rem;
+    padding-block: 2px;
+    text-align: center
+}
+.alive {
+    background-color: var(--alive);
+}
+.dead {
+    background-color: var(--dead);
+}
+.loader {
+    width: 80px;
+    padding: 15px;
+    aspect-ratio: 1;
+    border-radius: 50%;
+    background: var(--loading);
+    --_m:
+    conic-gradient(#0000 10%,#000),
+    linear-gradient(#000 0 0) content-box;
+    -webkit-mask: var(--_m);
+            mask: var(--_m);
+    -webkit-mask-composite: source-out;
+            mask-composite: subtract;
+    animation: l3 1s infinite linear;
+}
+@keyframes l3 {to{transform: rotate(1turn)}}

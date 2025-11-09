@@ -1,73 +1,62 @@
-# React + TypeScript + Vite
+# Visor de Personajes de Los Simpson  Simpsons
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Una aplicación web interactiva creada con React y TypeScript que permite a los usuarios explorar el vasto universo de personajes de la icónica serie "Los Simpson". La aplicación consume datos de [The Simpsons API](https://thesimpsonsapi.com/) para mostrar información detallada de cada personaje.
 
-Currently, two official plugins are available:
+## ✨ Características
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- **Galería de Personajes:** Visualiza una amplia lista de personajes populares de la serie.
+- **Paginación:** Navega fácilmente a través de las 60 páginas de personajes disponibles.
+- **Detalles del Personaje:** Obtén información clave como la edad y el estado (vivo o fallecido) de cada personaje.
+- **Diseño Responsivo:** Interfaz adaptable para una experiencia de usuario óptima en cualquier dispositivo.
+- **Indicadores de Carga:** Retroalimentación visual mientras se cargan nuevos personajes.
 
-## React Compiler
+## 🛠️ Tecnologías Utilizadas
 
-The React Compiler is currently not compatible with SWC. See [this issue](https://github.com/vitejs/vite-plugin-react/issues/428) for tracking the progress.
+Este proyecto fue construido utilizando tecnologías modernas del ecosistema de desarrollo web:
 
-## Expanding the ESLint configuration
+- **[React](https://react.dev/):** Biblioteca principal para construir la interfaz de usuario.
+- **[TypeScript](https://www.typescriptlang.org/):** Para un código más robusto y mantenible con tipado estático.
+- **[Vite](https://vitejs.dev/):** Herramienta de compilación y servidor de desarrollo rápido.
+- **[React Router](https://reactrouter.com/):** Para la gestión de rutas en la aplicación.
+- **[CSS Modules](https://github.com/css-modules/css-modules):** Para estilos encapsulados y sin colisiones a nivel de componente.
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+## 🚀 Cómo Empezar
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+Sigue estos pasos para configurar y ejecutar el proyecto en tu entorno local.
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
+### Prerrequisitos
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+Asegúrate de tener [Node.js](https://nodejs.org/) instalado en tu sistema. Se recomienda usar un gestor de paquetes como `pnpm`, `npm` o `yarn`.
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+### Instalación
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+1.  **Clona el repositorio:**
+    ```bash
+    git clone https://github.com/tu-usuario/tu-repositorio.git
+    cd tu-repositorio
+    ```
 
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+2.  **Instala las dependencias:**
+    Elige tu gestor de paquetes preferido.
+    ```bash
+    # Con pnpm (recomendado)
+    pnpm install
+
+    # Con npm
+    npm install
+
+    # Con yarn
+    yarn install
+    ```
+
+3.  **Ejecuta el servidor de desarrollo:**
+    ```bash
+    pnpm dev
+    ```
+
+4.  **Abre la aplicación:**
+    Abre tu navegador y visita http://localhost:5173 (o el puerto que Vite indique en tu terminal).
+
+## 📄 API
+
+Este proyecto utiliza la API pública y gratuita **The Simpsons API** para obtener todos los datos de los personajes.
