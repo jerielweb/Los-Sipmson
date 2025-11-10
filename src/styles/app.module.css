@@ -6,6 +6,7 @@
     width: 100%;
     height: 100dvh;
     gap: 5rem;
+    overflow: hidden;
 }
 .poster img, .logo img {
     width: 30rem;
@@ -22,12 +23,18 @@
     width: 30rem;
     text-align: center;
 }
+.text {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
 .text a {
     color: var(--text-button);
     background-color: var(--bg-button);
-    padding: 1rem 2rem;
+    padding: .7rem 1.5rem;
     border-radius: 1rem;
-    font-size: 1.5rem;
+    font-size: 1.7rem;
     text-decoration: none;
     font-weight: 700;
     transition: background 100ms ease-out;
@@ -43,12 +50,13 @@
     .container {
         flex-direction: column;
         justify-content: center;
+        min-width: 100vw;
     }
     .logoContainer {
         height: fit-content;
     }
     .poster img {
-        width: 60vw;
+        width: 100%;
         height: auto;
     }
 }

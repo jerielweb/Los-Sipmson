@@ -9,7 +9,9 @@ export default function App() {
   return (
     <main>
         <div>
-            <NAV />
+            <NAV
+            showExplorerButton={false}
+            />
         </div>
       <div className={AppStyle.container}>
         <div className={AppStyle.poster}>
@@ -20,7 +22,7 @@ export default function App() {
             <img src={LOGO} alt='Logo de la serien animada'/>
           </div>
           <div className={AppStyle.text}>
-            <Link to='./charathers.tsx'>Explore</Link>
+            <Link to='./explorer'>Explore</Link>
           </div>
         </div>
       </div>

@@ -3,28 +3,26 @@
     --text-primary: #fff;
     --bg-button: #FED90F;
     --text-button: #000;
+    --text-secondary: #000;
     --bg-button-hover: #e1c41d;
     --bg-article: #e8f8ff;
     --loading: #ffda05;
 }
-@import url('https://fonts.googleapis.com/css2?family=Concert+One&display=swap');
+
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: 'Concert One', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-family: 'Funel Sans', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-style: normal;
 }
 body {
-    background-image: var(--bg-primary);
-    background-attachment: fixed;
+    background: var(--bg-primary);
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    color: #000;
+    color: var(--text-secondary);
+    min-height: 100vh;
 }
 a, a:hover, a:active, a:focus, a:visited {
     text-decoration: none;
@@ -39,11 +37,18 @@ div {
 }
 .navbar a {
     color: var(--text-button);
-    padding: .5rem 1rem;
+    padding: .25rem .5rem;
     border-radius: 7px;
+    height: 40px;
+    font-size: 1rem;
+    text-decoration: none;
+    font-weight: 500;
+    display: flex;
+    align-items: center;
+    text-align: left;
     width: 100%;
 }
-.navbar a:hover {
+.navbar a:hover, .navbar a:active, .explorer-button:hover{
     background-color: var(--bg-button-hover);
 }
 .navbar {
@@ -55,7 +60,7 @@ div {
     width: 43px;
     height: 0px;
     left: 0;
-    gap: .5rem;
+    gap: .1rem;
     padding: 0;
     border: none;
     cursor: pointer;
@@ -73,16 +78,18 @@ div {
     padding: .5rem;
     top: 40px;
     width: 120px;
-    height: 92px;
+    height: 96px;
     top: 55px;
     color: #000;
 }
-.toggle-menu{
+.toggle-menu {
     display: flex;
     position: fixed;
     margin: 1rem;
     top: 0;
     left: 0;
+    width: 45px;
+    height: 45px;
     flex-direction: column;
     align-items: center;
     background: transparent;
@@ -95,4 +102,26 @@ div {
     align-items: center;
     color: var(--text-button);
     background-color: var(--bg-article);
+}
+.explorer-button {
+    display: flex;
+    position: fixed;
+    margin-top: 1rem;
+    top: 0;
+    left: 4.3rem;
+    flex-direction: column;
+    align-items: center;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    padding: .1rem;
+    border-radius: 7px;
+    font-size: 1.15rem;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--bg-article);
+    color: var(--text-button) !important;
+    width: 150px;
+    height: 45px;
 }

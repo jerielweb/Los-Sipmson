@@ -14,4 +14,13 @@ export interface Character {
     age: number | string | undefined;
     gender: string | undefined;
     status: string | undefined;
+    occupation: string[] | undefined;
+}
+
+export interface PageCharacterProps {
+    handleNextPage?: () => void;
+    handlePrevPage?: () => void;
+    page: number;
+    totalPages: number;
+    showtitlePage: boolean;
 }
