@@ -20,7 +20,7 @@ export default function EXPOLRER() {
                         <Link to={item.src}>
                             <h2>{item.title}</h2>
                             <img src={item.imgsrc} alt={item.title}/>
-                            <span>Click Para Abrir</span>
+                            <span>Click To Open</span>
                         </Link>
                     </div>
                 ))}
