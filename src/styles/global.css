@@ -71,6 +71,7 @@ div {
     color: #00000000;
     background-color: var(--bg-article);
     overflow: hidden;
+    z-index: 1000;
 }
 .navbar.active {
     display: flex;
@@ -102,6 +103,7 @@ div {
     align-items: center;
     color: var(--text-button);
     background-color: var(--bg-article);
+    z-index: 1000;
 }
 .explorer-button {
     display: flex;
@@ -124,4 +126,5 @@ div {
     color: var(--text-button) !important;
     width: 150px;
     height: 45px;
+    z-index: 1000;
 }
