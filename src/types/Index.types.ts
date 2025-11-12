@@ -3,24 +3,24 @@ export interface ApiResponse {
     next: string | null;
     prev: string | null;
     pages: number;
-    results: Character[];
+    results: Character[] & Episode[];
     id: number;
 }
-
+export interface Episode {
+    id: number;
+    name: string;
+    airdate: string;
+    episode_number: number;
+    image_path: string;
+    synopsis: string;
+    season: number;
+}
 export interface Character {
     id: number;
     name: string;
     portrait_path: string;
-    age: number | string | undefined;
-    gender: string | undefined;
+    age: number | string;
+    gender: string;
     status: string | undefined;
     occupation: string[] | undefined;
-}
-
-export interface PageCharacterProps {
-    handleNextPage?: () => void;
-    handlePrevPage?: () => void;
-    page: number;
-    totalPages: number;
-    showtitlePage: boolean;
 }

@@ -1,0 +1,51 @@
+.loading {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 15rem;
+    height: 60vh;
+    aspect-ratio: 1 / 1;
+}
+.loadingItem {
+    background-color: var(--bg-article);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    width: 15rem;
+    height: 17rem;
+    aspect-ratio: 1 / 1;
+    border-radius: 1rem;
+    padding: 1rem;
+    text-align: center;
+}
+.text {
+    margin-top: 0;
+    width: 6.5rem;
+    text-align: left;
+    font-size: 1.2rem;
+    font-weight: 600;
+}
+@keyframes textdot {
+    0% {
+        content: ' ';
+    }
+    25% {
+        content: '. ';
+    }
+    50% {
+        content: '. .';
+    }
+    75% {
+        content: '. . .';
+    }
+    100% {
+        content: ' ';
+    }
+
+}
+.text::after {
+    content: '. . .';
+    animation: textdot 1s linear infinite;
+}

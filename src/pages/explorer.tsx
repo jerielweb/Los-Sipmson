@@ -2,16 +2,12 @@ import { NAV, EXPLORER } from './../components/index.ts'
 import { Link } from 'react-router-dom'
 import ExplorerStyle from './../styles/explorer.module.css'
 
-
-
 export default function EXPOLRER() {
     return (
         <main>
-            <div>
                 <NAV
                 showExplorerButton={false}
                 />
-            </div>
             <div className={ExplorerStyle.container}>
             <h1>Explorer</h1>
             <div className={ExplorerStyle.cardsContainer}>

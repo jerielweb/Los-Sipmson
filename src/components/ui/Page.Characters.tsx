@@ -1,7 +1,7 @@
 import CardStyle from './../../styles/cards.module.css';
-import type { PageCharacterProps } from '../../types/charathers.types.ts';
+import type Props from '../../types/pageCounter.types.ts';
 
-export default function PAGE_CHARACTER({ handleNextPage, handlePrevPage, page = 1, totalPages, showtitlePage = true }: PageCharacterProps) {
+export default function PAGE_COUNTER({ handleNextPage, handlePrevPage, page = 1, totalPages, showtitlePage = true }: Props) {
     return(
         <div className={CardStyle.header}>
             { showtitlePage && (

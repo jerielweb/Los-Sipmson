@@ -1,0 +1,74 @@
+.button[disabled]{
+    opacity: 0.5;
+    cursor: not-allowed !important;
+}
+.button[disabled]:active{
+    background-color: var(--bg-button);
+}
+.header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+    z-index: 1;
+}
+.pagination {
+    background-color: var(--bg-article);
+    width: 8rem;
+    padding-block: 15px;
+    height: 20px;
+    border-radius: 25px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+}
+.pagination_bottom {
+    background-color: var(--bg-article);
+    width: 8rem;
+    height: 2.3rem;
+    border-radius: 25px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+}
+.button {
+    background-color: var(--bg-button);
+    color: var(--text-button);
+    width: 9rem;
+    height: 2.3rem;
+    border-radius: 1rem;
+    font-size: 1rem;
+    text-decoration: none;
+    font-weight: 700;
+    border: none;
+    cursor: pointer;
+    transition: background 100ms ease-out;
+}
+.button:active {
+    background-color: var(--bg-button-hover);
+}
+.buttons {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+}
+.buttons_bottom {
+    margin-block: 2rem;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+}
+@media (max-width: 1050px) {
+    .button {
+        width: 7rem;
+        height: 2.3rem;
+    }
+}

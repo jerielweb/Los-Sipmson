@@ -1,0 +1,47 @@
+.NavBar {
+    display: flex;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: fit-content;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    padding: 1rem 0 0 1rem;
+    z-index: 2;
+}
+.menu {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+.menu a {
+    color: var(--text-secondary);
+    text-decoration: none;
+    font-weight: 700;
+    font-size: 1.2rem;
+    width: 150px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: .5rem;
+    background-color: var(--bg-article);
+    border: 2px solid;
+    z-index: 1000;
+}
+.menu a:hover {
+    background-color: var(--bg-button);
+}
+.menu .button {
+    width: 50px;
+    height: 50px;
+    border-radius: 10px;
+    display: flex;
+    border: 2px solid;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--bg-article);
+    color: var(--text-button);
+    cursor: pointer;
+}

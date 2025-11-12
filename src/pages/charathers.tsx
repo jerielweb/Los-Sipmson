@@ -1,15 +1,14 @@
 import { useState, useEffect } from "react"
-import type { ApiResponse, Character } from "../types/charathers.types.ts"
-import CardStyle from './../styles/cards.module.css'
-import { NAV, LOADING } from './../components/index.ts'
-import PAGE_CHARACTER from "../components/ui/Page.Characters.tsx"
+import type { ApiResponse, Character } from "../types/Index.types.ts"
+import CardStyle from './../styles/cardsCharather.module.css'
+import { NAV, PAGE_COUNTER, LOADING } from './../components/index.ts'
+import { IMAGE } from "../components/index.ts"
 
 export default function Characters() {
     const [characters, setCharacters] = useState<Character[]>([])
     const [page, setPage] = useState(1);
     const [loading, setLoading] = useState(true)
     const totalPages = 60
-
     useEffect(() => {
         const getCharacters = async () => {
             setLoading(true);
@@ -19,7 +18,11 @@ export default function Characters() {
 
                 if (dataCharacters.results && Array.isArray(dataCharacters.results)) {
                     setCharacters(dataCharacters.results)
+                    console.log(dataCharacters.results)
                 }
+            }
+            catch (error) {
+                console.log(error)
             } finally {
                 setLoading(false)
             }
@@ -40,13 +43,13 @@ export default function Characters() {
     }
 
     return (
-        <>
         <main>
-            <div>
                 <NAV />
-            </div>
             <div className={CardStyle.container}>
-            <PAGE_CHARACTER
+            <PAGE_COUNTER
+            col={true}
+            row={false}
+            title="Popular Characters"
             showtitlePage={true}
             page={page}
             totalPages={totalPages}
@@ -57,13 +60,16 @@ export default function Characters() {
                 {!loading && Array.isArray(characters) && characters.length > 0 ? (
                     characters.map((character, i) => (
                         <article key={i} className={CardStyle.card}>
-                            <div>
+                            <div className={CardStyle.image}>
                                 <h2 className={CardStyle.name}>{character.name}</h2>
                                 <p>{character.occupation}</p>
-                                <img src={`https://cdn.thesimpsonsapi.com/200${character.portrait_path}`} alt={character.name} />
+                                <div className={CardStyle.imageContainer}>
+                                    <IMAGE src={`https://cdn.thesimpsonsapi.com/200${character.portrait_path}`} alt={character.name} showtext={false}/>
+                                </div>
                             </div>
-                            <div>
+                            <div className={CardStyle.info}>
                                 <p>Age: {character.age === null ? 'Unknown' : character.age}</p>
+                                <span>{character.gender}</span>
                                 <p
                                 className={character.status === 'Alive' ? CardStyle.alive : CardStyle.dead}
                                 >{character.status === 'Alive' ? 'Alive' : 'Deceased'}</p>
@@ -74,7 +80,10 @@ export default function Characters() {
                     <LOADING />
                 )}
                 </div>
-            <PAGE_CHARACTER
+            <PAGE_COUNTER
+            col={false}
+            row={true}
+            title={null}
             showtitlePage={false}
             page={page}
             totalPages={totalPages}
@@ -83,6 +92,5 @@ export default function Characters() {
             />
             </div>
         </main>
-    </>
     )
 }
