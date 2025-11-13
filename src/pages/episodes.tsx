@@ -1,6 +1,6 @@
 import { NAV, LOADING, PAGE_COUNTER, IMAGE } from './../components/index.ts'
 import { useEffect, useState } from 'react'
-import type { Episode, ApiResponse } from '../types/Index.types.ts'
+import type { Episode, ApiResponse } from '../types.d.ts'
 import EpisodeStyle from './../styles/episode.module.css'
 
 export default function EPISODES() {
@@ -18,7 +18,7 @@ export default function EPISODES() {
 
                 if (dataEpisodes.results && Array.isArray(dataEpisodes.results)) {
                     setEpisodes(dataEpisodes.results)
-                }console.log(dataEpisodes.results)
+                }
             }
             catch (error) {
                 console.log(error)
@@ -42,9 +42,7 @@ export default function EPISODES() {
     }
     return (
         <main>
-            <div>
-                <NAV />
-            </div>
+            <NAV />
             <div className={EpisodeStyle.container}>
                 <PAGE_COUNTER
                 col={true}
@@ -71,10 +69,6 @@ export default function EPISODES() {
                                     </div>
                                 </div>
                                 <div className={EpisodeStyle.info}>
-                                    <p>
-                                        <strong>Description:&nbsp;<br /></strong>
-                                        <span id={EpisodeStyle.synopsis}>{episode.synopsis === '' ? 'Unknown' : episode.synopsis}</span>
-                                    </p>
                                     <p>
                                         <strong>Air Date:&nbsp;</strong>
                                         <span>{episode.airdate === '' ? 'Unknown' : episode.airdate}</span>

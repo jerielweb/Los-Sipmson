@@ -1,3 +1,14 @@
+export interface PageButtonsProps {
+    handleNextPage?: () => void;
+    handlePrevPage?: () => void;
+    page: number;
+    totalPages: number;
+    showtitlePage: boolean;
+    title: string | null;
+    row: boolean;
+    col: boolean;
+}
+
 export interface ApiResponse {
     count: number;
     next: string | null;
@@ -6,6 +17,7 @@ export interface ApiResponse {
     results: Character[] & Episode[];
     id: number;
 }
+
 export interface Episode {
     id: number;
     name: string;
@@ -15,6 +27,7 @@ export interface Episode {
     synopsis: string;
     season: number;
 }
+
 export interface Character {
     id: number;
     name: string;
@@ -23,4 +36,11 @@ export interface Character {
     gender: string;
     status: string | undefined;
     occupation: string[] | undefined;
+}
+
+export interface ImageProps {
+    src: string;
+    alt: string;
+    className?: string;
+    showtext: boolean;
 }

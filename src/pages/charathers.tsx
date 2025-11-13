@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react"
-import type { ApiResponse, Character } from "../types/Index.types.ts"
+import type { ApiResponse, Character } from "../types.d.ts"
 import CardStyle from './../styles/cardsCharather.module.css'
 import { NAV, PAGE_COUNTER, LOADING } from './../components/index.ts'
 import { IMAGE } from "../components/index.ts"
@@ -18,7 +18,6 @@ export default function Characters() {
 
                 if (dataCharacters.results && Array.isArray(dataCharacters.results)) {
                     setCharacters(dataCharacters.results)
-                    console.log(dataCharacters.results)
                 }
             }
             catch (error) {
@@ -44,7 +43,7 @@ export default function Characters() {
 
     return (
         <main>
-                <NAV />
+            <NAV />
             <div className={CardStyle.container}>
             <PAGE_COUNTER
             col={true}

@@ -1,7 +1,7 @@
 import { NAV, EXPLORER } from './../components/index.ts'
 import { Link } from 'react-router-dom'
 import ExplorerStyle from './../styles/explorer.module.css'
-
+import { IMAGE } from './../components/index.ts'
 export default function EXPOLRER() {
     return (
         <main>
@@ -15,7 +15,13 @@ export default function EXPOLRER() {
                     <div key={ex} className={ExplorerStyle.card}>
                         <Link to={item.src}>
                             <h2>{item.title}</h2>
-                            <img src={item.imgsrc} alt={item.title}/>
+                            <div className={ExplorerStyle.image}>
+                                <IMAGE
+                                src={item.imgsrc}
+                                alt={item.title}
+                                showtext={false}
+                                />
+                            </div>
                             <span>Click To Open</span>
                         </Link>
                     </div>
