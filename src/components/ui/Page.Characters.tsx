@@ -1,7 +1,7 @@
 import CardStyle from './../../styles/cards.module.css';
-import type { PageButtonsProps } from '../../types';
+import type { PageCounterProps } from '../../types.d.ts';
 
-export default function PAGE_COUNTER({ handleNextPage, handlePrevPage, page = 1, totalPages, showtitlePage = true }: PageButtonsProps) {
+export default function PAGE_COUNTER({ handleNextPage, handlePrevPage, page = 1, totalPages, showtitlePage = true }: PageCounterProps) {
     return(
         <div className={CardStyle.header}>
             { showtitlePage && (

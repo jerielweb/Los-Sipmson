@@ -1,4 +1,4 @@
-export interface PageButtonsProps {
+export interface PageCounterProps {
     handleNextPage?: () => void;
     handlePrevPage?: () => void;
     page: number;
