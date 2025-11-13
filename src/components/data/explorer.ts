@@ -2,7 +2,7 @@
 
 export const EXPLORER_MAP = [
     {
-        title: 'Popular Charathers',
+        title: 'Popular Characters',
         src: './../charathers',
         imgsrc: 'https://i.pinimg.com/736x/b4/7b/61/b47b6168c9efcec09d271540c59777ec.jpg',
     },
