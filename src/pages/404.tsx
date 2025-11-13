@@ -1,9 +1,13 @@
 import FoundStyles from './../styles/404.module.css'
 import { Link } from 'react-router-dom'
 import { NAV } from './../components/index.ts'
+import { useEffect } from 'react'
 
 
 export default function NotFound() {
+    useEffect(() => {
+        document.title = 'Page Not Found | The Simpson'
+    }, [])
     return(
         <main>
             <div>

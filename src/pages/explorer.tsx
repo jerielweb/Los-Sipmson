@@ -1,8 +1,12 @@
-import { NAV, EXPLORER } from './../components/index.ts'
+import { NAV, EXPLORER_DATA } from './../components/index.ts'
 import { Link } from 'react-router-dom'
 import ExplorerStyle from './../styles/explorer.module.css'
 import { IMAGE } from './../components/index.ts'
-export default function EXPOLRER() {
+import { useEffect } from 'react'
+export default function EXPLORER() {
+    useEffect(() => {
+        document.title = 'Explorer | The Simpson'
+    }, [])
     return (
         <main>
                 <NAV
@@ -11,7 +15,7 @@ export default function EXPOLRER() {
             <div className={ExplorerStyle.container}>
             <h1>Explorer</h1>
             <div className={ExplorerStyle.cardsContainer}>
-                {EXPLORER.map((item, ex) => (
+                {EXPLORER_DATA.map((item, ex) => (
                     <div key={ex} className={ExplorerStyle.card}>
                         <Link to={item.src}>
                             <h2>{item.title}</h2>

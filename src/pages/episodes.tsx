@@ -10,6 +10,10 @@ export default function EPISODES() {
     const totalPages = 39
 
     useEffect(() => {
+        document.title = 'Episodes | The Simpson'
+    }, [])
+
+    useEffect(() => {
         const getEpisodes = async () => {
             setLoading(true);
             try {

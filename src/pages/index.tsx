@@ -3,8 +3,13 @@ import { POSTER, LOGO } from './../assets/index.ts'
 import AppStyle from './../styles/app.module.css'
 import { Link } from 'react-router-dom'
 import { NAV } from './../components/index.ts'
+import { useEffect } from 'react'
 
 export default function App() {
+
+  useEffect(() => {
+    document.title = 'Los Simpson'
+  }, [])
 
   return (
     <main>

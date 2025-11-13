@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react"
 import type { ApiResponse, Character } from "../types.d.ts"
-import CardStyle from './../styles/cardsCharather.module.css'
+import CardStyle from './../styles/charather.module.css'
 import { NAV, PAGE_COUNTER, LOADING } from './../components/index.ts'
 import { IMAGE } from "../components/index.ts"
 
@@ -9,6 +9,9 @@ export default function Characters() {
     const [page, setPage] = useState(1);
     const [loading, setLoading] = useState(true)
     const totalPages = 60
+    useEffect(() => {
+        document.title = 'Characters | The Simpson'
+    }, [])
     useEffect(() => {
         const getCharacters = async () => {
             setLoading(true);
