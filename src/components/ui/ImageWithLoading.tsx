@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import  Loading  from './Loading.tsx';
+import  Loading  from '../icons/Loading.tsx';
 import type { ImageProps } from '../../types.d.ts';
 
 export default function ImageWithLoading({ src, alt, className, showtext = true }: ImageProps) {
@@ -10,9 +10,13 @@ export default function ImageWithLoading({ src, alt, className, showtext = true 
 
   return (
     <>
-      {!imageLoaded && <Loading
-      showtext={showtext}
-      />}
+      {
+        !imageLoaded && 
+        <Loading
+        showtext={showtext}
+      />
+      }
+
       <img
         src={src}
         alt={alt}

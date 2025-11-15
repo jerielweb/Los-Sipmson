@@ -27,7 +27,7 @@
     align-items: center;
     justify-content: center;
     width: 100%;
-    min-height: 100vh;
+    min-height: 65vh;
     gap: 1rem;
     max-width: 1600px;
 }
@@ -50,7 +50,7 @@
     text-align: center;
 }
 .card:hover {
-    border: #545454 3px solid;
+    border: var(--global-hover) 3px solid;
 }
 .card img {
     width: 100%;
