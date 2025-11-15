@@ -19,6 +19,6 @@ export default function LOADING({showtext = true}) {
                     <span className={LoadStyle.text}>Loading</span>
                 )}
             </div>
-        </div>
+        </div>  
     )
 }

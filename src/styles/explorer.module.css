@@ -53,7 +53,7 @@
     transition: border 200ms ease-out;
 }
 .card:hover {
-    border: #545454 3px solid;
+    border: var(--global-hover) 3px solid;
 }
 .card a {
     display: flex;

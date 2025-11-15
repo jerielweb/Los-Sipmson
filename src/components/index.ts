@@ -1,6 +1,6 @@
 import Nav from './nav.tsx'
 import explorerData from './data/explorer.ts'
-import loader from './ui/Loading.tsx'
+import loader from './icons/Loading.tsx'
 import PageCounter from './ui/Page.Counter.tsx'
 import ImageWithLoading from './ui/ImageWithLoading.tsx'
 
